@@ -11,13 +11,13 @@ import pages.FacebookLoginPage;
  * Created by Ashish on 14-07-2017.
  */
 public class FacebookLoginTest extends BaseSetup{
-    String userName = "ash.liveslove@gmail.com";
-    String password = "Talkedcracker89";
+    String userName = "";
+    String password = "";
     FacebookLoginPage objLogin;
     FacebookHomePage objHome;
 
     @Test
-    public void Test1(){
+    public void FacebookPost(){
         driver.get("https:\\www.facebook.com");
         objLogin = new FacebookLoginPage(driver);
         objHome = new FacebookHomePage(driver);

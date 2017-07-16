@@ -27,8 +27,11 @@ public class FacebookLoginPage {
 
     public void login(String username, String password){
         emailField.sendKeys(username);
+        System.out.println("Entered Username: "+username);
         passwordField.sendKeys(password);
+        System.out.println("Entered Password: "+password);
         loginButton.click();
+        System.out.println("Clicked on Login button");
     }
 
 }
