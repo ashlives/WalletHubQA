@@ -23,6 +23,5 @@ public class FacebookLoginTest extends BaseSetup{
         objHome = new FacebookHomePage(driver);
         objLogin.login(userName, password);
         objHome.postStatus("Hello World");
-        //assert.equals("Hello World", )
     }
 }
