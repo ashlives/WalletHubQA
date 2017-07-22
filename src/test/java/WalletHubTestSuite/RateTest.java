@@ -1,6 +1,4 @@
 package WalletHubTestSuite;
-
-import FacebookTestSuite.BaseSetup;
 import org.testng.annotations.Test;
 import pages.WalletHubReviewPage;
 
