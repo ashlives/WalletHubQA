@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,14 +19,17 @@ public class WalletHubReviewPage {
     public WalletHubReviewPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
-//        actions = new Actions(driver);
+        actions = new Actions(driver);
     }
 
-    @FindBy (xpath = ".//*[@id='wh-body-inner']/div[2]/div[3]")
+    @FindBy (className = "wh-rating-notes")
     WebElement ratingStars;
 
-    public void hoverStars(){
-        actions.moveToElement(ratingStars);
-        actions.click().build().perform();
+
+    public void hoverStars(int star){
+        actions.moveToElement(ratingStars)
+        .build().perform();
+        WebElement stars = driver.findElement(By.xpath(".//*[@id='wh-body-inner']/div[2]/div[3]/div[1]/div/a["+star+"]"));
+        actions.moveToElement(stars).build().perform();
     }
 }
