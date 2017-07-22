@@ -9,7 +9,7 @@ public class RateTest extends BaseSetup {
     WalletHubReviewPage objReview;
 
     @Test
-    public void Test1(){
+    public void Rating(){
         driver.get("https:\\wallethub.com/profile/test_insurance_company/");
         objReview = new WalletHubReviewPage(driver);
         objReview.hoverStars(3);
