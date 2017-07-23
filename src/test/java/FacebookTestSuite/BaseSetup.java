@@ -18,8 +18,8 @@ public class BaseSetup {
     WebDriverWait wait;
     FacebookLoginPage objLogin;
     FacebookHomePage objHome;
-    String userName = "ash.liveslove@gmail.com";
-    String password = "Talkedcracker89";
+    String userName = "";
+    String password = "";
 
     @BeforeClass
     public void setup(){

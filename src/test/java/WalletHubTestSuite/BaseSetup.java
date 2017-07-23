@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.WalletHubLoginPage;
@@ -18,8 +19,8 @@ public class BaseSetup {
 
     @BeforeClass
     public void setup(){
-        String username = "username";
-        String password = "password";
+        String username = "";
+        String password = "";
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--disable-notifications");
         System.setProperty("webdriver.chrome.driver", "D:\\Selenium Webdriver/chromedriver.exe");
@@ -27,7 +28,9 @@ public class BaseSetup {
         objLogin = new WalletHubLoginPage(driver);
         wait = new WebDriverWait(driver,50);
         driver.get("https://wallethub.com/join/login");
-        objLogin.login(username, password);
+        String name = objLogin.login(username, password);
+        Assert.assertEquals("TESTER", name);
+        System.out.println("Login Successful.");
     }
 
     @AfterClass
