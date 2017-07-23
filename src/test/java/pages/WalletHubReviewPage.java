@@ -27,8 +27,7 @@ public class WalletHubReviewPage {
 
 
     public void hoverStars(int star){
-        actions.moveToElement(ratingStars)
-        .build().perform();
+        actions.moveToElement(ratingStars).perform();
         WebElement stars = driver.findElement(By.xpath(".//*[@id='wh-body-inner']/div[2]/div[3]/div[1]/div/a["+star+"]"));
         actions.moveToElement(stars).build().perform();
     }
