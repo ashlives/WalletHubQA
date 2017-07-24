@@ -1,5 +1,6 @@
 package FacebookTestSuite;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FacebookHomePage;
 
@@ -10,7 +11,10 @@ public class FacebookPost extends BaseSetup{
     //FacebookHomePage objHome;
 
     @Test
-    public void FacebookPost(){
+    public void FacebookPost() throws InterruptedException {
         objHome.postStatus("Hello World");
+        Thread.sleep(5000);
+        System.out.println(objHome.getFirstFeed());
+        Assert.assertTrue(objHome.getFirstFeed().contains("Hello World"));
     }
 }

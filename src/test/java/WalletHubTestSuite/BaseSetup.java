@@ -19,8 +19,8 @@ public class BaseSetup {
 
     @BeforeClass
     public void setup(){
-        String username = "";
-        String password = "";
+        String username = "vuprime1@gmail.com";
+        String password = "Password123$";
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--disable-notifications");
         System.setProperty("webdriver.chrome.driver", "D:\\Selenium Webdriver/chromedriver.exe");
